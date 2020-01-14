@@ -35,7 +35,7 @@ exports.handler = (event, context, callback) => {
       context.succeed(
         generateResponse(
           buildSpeechletResponse(
-            "Welcome to Alexa Connectivity App. Please let me know your name to authorize",
+            "Welcome to Join Digital Alexa Connectivity App. Please let me know your name to authorize",
             false
           )
         )
@@ -74,6 +74,22 @@ exports.handler = (event, context, callback) => {
           context.succeed(
             generateResponse(
               buildSpeechletResponse("Help is on the way.", false)
+            )
+          );
+          break;
+
+        case "AMAZON.CancelIntent":
+          context.succeed(
+            generateResponse(
+              buildSpeechletResponse("Cancelling it", true)
+            )
+          );
+          break;
+
+        case "AMAZON.StopIntent":
+          context.succeed(
+            generateResponse(
+              buildSpeechletResponse("Stopping it", true)
             )
           );
           break;
@@ -128,10 +144,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse(
-                  "Successfully Turned off the wifi",
-                  false
-                )
+                buildSpeechletResponse("Successfully Turned of the wifi", false)
               )
             );
           } else {
@@ -152,10 +165,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse(
-                  "Successfully Turned of the heater",
-                  false
-                )
+                buildSpeechletResponse("Heater is up and running.", false)
               )
             );
           } else {
@@ -200,10 +210,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse(
-                  "Successfully Turned of the heater",
-                  false
-                )
+                buildSpeechletResponse("Door is now open!!!", false)
               )
             );
           } else {
