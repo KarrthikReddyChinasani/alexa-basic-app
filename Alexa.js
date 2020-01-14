@@ -1,17 +1,17 @@
 const users = [
   {
     name: "Satya",
-    password: 1234,
+    password: 1122,
     id: 1
   },
   {
     name: "Vaishali",
-    password: 1111,
+    password: 3344,
     id: 2
   },
   {
     name: "Dan",
-    password: 1217,
+    password: 5566,
     id: 3
   }
 ];
@@ -124,7 +124,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse("Successfully connected to wifi", false)
+                buildSpeechletResponse("Wifi - on", false)
               )
             );
           } else {
@@ -144,7 +144,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse("Successfully Turned of the wifi", false)
+                buildSpeechletResponse("Wifi - off", false)
               )
             );
           } else {
@@ -165,7 +165,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse("Heater is up and running.", false)
+                buildSpeechletResponse("Heater - on.", false)
               )
             );
           } else {
@@ -187,7 +187,7 @@ exports.handler = (event, context, callback) => {
             context.succeed(
               generateResponse(
                 buildSpeechletResponse(
-                  "Successfully Turned of the heater",
+                  "Heater - off",
                   false
                 )
               )
@@ -210,7 +210,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse("Door is now open!!!", false)
+                buildSpeechletResponse("Door unlocked", false)
               )
             );
           } else {
@@ -231,7 +231,7 @@ exports.handler = (event, context, callback) => {
           if (isAuthorized) {
             context.succeed(
               generateResponse(
-                buildSpeechletResponse("Successfully Closed the door", false)
+                buildSpeechletResponse("Door locked", false)
               )
             );
           } else {
@@ -251,7 +251,7 @@ exports.handler = (event, context, callback) => {
             context.succeed(
               generateResponse(
                 buildSpeechletResponse(
-                  "Successfully created a zoom meeting room.",
+                  "Joined",
                   false
                 )
               )
